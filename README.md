@@ -1,7 +1,7 @@
 # C++ Game Engine
 <p align="justify">
  Custom game engine/framework built using C++ and on top of some of the usual culprits, i.e. Box2D for physics, OpenGL for graphics and SDL for window creation, input handling as well as audio. Being 2D only, there are 
- some common features already implemented, like 2D transformations, tiling, and spritesheet based animations. Common classed like <code>GameObject</code>, <code>Pawn</code> and <code>Sprite</code> are also already 
+ some common features already implemented, like 2D transformations, tiling, and spritesheet based animations. Common classes like <code>GameObject</code>, <code>Pawn</code> and <code>Sprite</code> are also already 
  built-in, with the engine being compilable into a library that can then be used to build your own game on top of it.
 </p>
 
