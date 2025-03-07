@@ -1,8 +1,7 @@
--- premake5.lua
-workspace "BingoChallenge"
+workspace "CppGameEngine"
    architecture "x64"
    configurations { "Debug", "Release" }
-   startproject "App"
+   startproject "Game"
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"
@@ -11,8 +10,8 @@ workspace "BingoChallenge"
 -- Variable is used by each project lua file
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-group "Bingo"
-	include "Bingo/Build-Bingo.lua"
+group "Engine"
+   include "Engine/Build-Engine.lua"
 group ""
 
-include "App/Build-App.lua"
+include "Game/Build-Game.lua"
