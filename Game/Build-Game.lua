@@ -20,7 +20,6 @@ project "Game"
         defines { "WINDOWS" }
         postbuildcommands
         {
-            "{COPYFILE} ../Binaries/" .. OutputDir .. "/Engine/*.lib ../Binaries/" .. OutputDir .. "/Game",
             "{COPYFILE} ../lib/*.dll ../Binaries/" .. OutputDir .. "/Game",
             "{COPYDIR} ../Game/data ../Binaries/" .. OutputDir .. "/Game/data"
         }

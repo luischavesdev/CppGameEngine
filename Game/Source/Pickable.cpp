@@ -5,6 +5,7 @@
 #include "RenderObject.h"
 #include "Spaceship.h"
 #include "Companion.h"
+#include "AudioManager.h";
 
 Pickable::Pickable(std::string objectNameRef, RenderObject* RenderObjectRef, GameEngine* gameEngineRef, int idRef, TypeOfPickable typeRef) : 
 	Sprite(objectNameRef, RenderObjectRef, gameEngineRef, idRef)
@@ -39,6 +40,7 @@ void Pickable::OnCollision(Sprite* colliderSpriteRef)
 
 		if (spaceshipRef != nullptr)
 		{
+			GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/PowerupAcquired.wav", 60);
 			switch (myTypeOfPickable)
 			{
 			case CompanionType:
@@ -62,6 +64,7 @@ void Pickable::OnCollision(Sprite* colliderSpriteRef)
 
 			if (myCompanionRef != nullptr)
 			{
+				GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/PowerupAcquired.wav", 60);
 				switch (myTypeOfPickable)
 				{
 				case CompanionType:

@@ -157,13 +157,12 @@ void Spaceship::UpdateProjectileData()
 void Spaceship::UpgradeFirepower()
 {
 	currentFirepower = std::max(0.0f, std::min(currentFirepower + 1.0f, 3.0f));
-	GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/PowerupAcquired.wav", 60);
 }
 
 void Spaceship::AddCompanion()
 {
 	canSpawnCompanion = true;
-	GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/PowerupAcquired.wav", 60);
+	
 }
 
 void Spaceship::UpdateCompanionStatus(int companionRef, bool trueFalse)
@@ -192,7 +191,10 @@ void Spaceship::ChangeLife(float lifeToAdd)
 {
 	life = std::max(0.0f, std::min(life + lifeToAdd, maxLife));
 
-	GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/DamageTaken.wav", 60);
+	if (lifeToAdd < 0)
+	{
+		GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/DamageTaken.wav", 60);
+	}
 
 	if (life <= 0.0f)
 	{

@@ -8,6 +8,7 @@
 #include "Missile.h"
 #include "PhysicsManager.h"
 #include "Spaceship.h"
+#include "AudioManager.h";
 
 Companion::Companion(std::string objectNameRef, RenderObject* RenderObjectRef, GameEngine* gameEngineRef, int idRef, 
 	Texture* missileTextureRef, Texture* altMissileTextureRef, Spaceship* spaceshipRef, int companionRef) :Sprite(objectNameRef, RenderObjectRef, gameEngineRef, idRef)
@@ -64,8 +65,14 @@ void Companion::ChangeLife(float lifeToAdd)
 {
 	life = std::max(0.0f, std::min(life + lifeToAdd, maxLife));
 
+	if (lifeToAdd < 0)
+	{
+		GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/DamageTaken.wav", 60);
+	}
+
 	if (life <= 0.0f)
 	{
+		GetGameEngine()->GetAudioManager()->PlaySound(0, "data/audio/ShipExplosion.wav", 100);
 		mySpaceshipRef->UpdateCompanionStatus(myCompanionRef, false);
 		SetObjectToDestroy();
 	}

@@ -38,7 +38,7 @@ int main() {
 
 
 	//BACKGROUND
-	Texture* backgroundTexture = new Texture("data/graphics/galaxyBackground.jpg", 1, 1);
+	Texture* backgroundTexture = new Texture("data/graphics/GalaxyBackground.jpg", 1, 1);
 	RenderObject* backgroundRendObject = new RenderObject(0, 0, backgroundTexture, &myEngine, 1, 2);
 	Sprite* background = new Sprite("Background", backgroundRendObject, &myEngine, backgroundRendObject->id);
 	Vector2 parallaxSpeed;
@@ -48,7 +48,7 @@ int main() {
 	firstLevel->AddObjectToBuffer(background);
 	
 	//ASTEROID BELT
-	Texture* bckgrndStonesTexture = new Texture("data/graphics/backgroundstones.jpg", 1, 1);
+	Texture* bckgrndStonesTexture = new Texture("data/graphics/BackgroundStones.jpg", 1, 1);
 	RenderObject* bckgrndStonesRendObj = new RenderObject(1, 1, bckgrndStonesTexture, &myEngine, 1, 2);
 	Sprite* bckgrndStones = new Sprite("Aster", bckgrndStonesRendObj, &myEngine, bckgrndStonesRendObj->id);
 	Vector2 parallaxSpeed2;
@@ -111,7 +111,7 @@ int main() {
 	shieldPUObj->SetCollider(shieldPUCol);
 	firstLevel->AddObjectToBuffer(shieldPUObj);
 
-	Texture* companionPUText = new Texture("data/graphics/clone.bmp", 5, 4);
+	Texture* companionPUText = new Texture("data/graphics/Clone.bmp", 5, 4);
 	RenderObject* companionPURendObj = new RenderObject(2, 6, companionPUText, &myEngine, 1.0f, 1, 1);
 	Vector2 positionCompanionPUCol;
 	positionCompanionPUCol.x = 300.0f;
@@ -136,9 +136,9 @@ int main() {
 	firstLevel->AddObjectToBuffer(companionPUObj2);
 
 	//SHIP
-	Texture* shipTexture = new Texture("data/graphics/Ship1.bmp", 1, 7);
-	Texture* missileTexture = new Texture("data/graphics/missile.bmp", 3, 2);
-	Texture* explosionTexture = new Texture("data/graphics/explode64.bmp", 2, 5);
+	Texture* shipTexture = new Texture("data/graphics/Ship.bmp", 1, 7);
+	Texture* missileTexture = new Texture("data/graphics/Missile.bmp", 3, 2);
+	Texture* explosionTexture = new Texture("data/graphics/Explosion.bmp", 2, 5);
 	RenderObject* shipRendObject = new RenderObject(7, 7, shipTexture, &myEngine, 1.0f, 1, 4);
 	Vector2 positionShipCol;
 	positionShipCol.x = 0.0f;
@@ -153,7 +153,7 @@ int main() {
 	firstLevel->AddObjectToBuffer(myShip);
 	
 	//RUSHER
-	Texture* rusherTexture = new Texture("data/graphics/rusher.bmp", 6, 4);
+	Texture* rusherTexture = new Texture("data/graphics/Rusher.bmp", 6, 4);
 	RenderObject* rusherRendObject = new RenderObject(2, 6, rusherTexture, &myEngine, 1.0f, 1, 1);
 	Vector2 positionRusherCol;
 	positionRusherCol.x = 300.0f;
@@ -167,8 +167,8 @@ int main() {
 	firstLevel->AddObjectToBuffer(testRusher);
 
 	//LONER
-	Texture* lonerTexture = new Texture("data/graphics/LonerA.bmp", 4, 4);
-	Texture* projectileText = new Texture("data/graphics/EnWeap6.bmp", 1, 8);
+	Texture* lonerTexture = new Texture("data/graphics/Loner.bmp", 4, 4);
+	Texture* projectileText = new Texture("data/graphics/EnemyProjectile.bmp", 1, 8);
 	RenderObject* lonerRendObject = new RenderObject(2, 4, lonerTexture, &myEngine, 1.0f, 1, 1);
 	Vector2 positionLonerCol;
 	positionLonerCol.x = 150.0f;
@@ -182,7 +182,7 @@ int main() {
 	firstLevel->AddObjectToBuffer(testLoner);
 
 	//DRONE SPAWNER
-	Texture* droneText = new Texture("data/graphics/drone.bmp", 2, 8);
+	Texture* droneText = new Texture("data/graphics/Drone.bmp", 2, 8);
 	Vector2 spawnLocation;
 	spawnLocation.x = 400.0f;
 	spawnLocation.y = 150.0f;
@@ -196,9 +196,9 @@ int main() {
 	firstLevel->AddObjectToBuffer(droneSpawnerObj2);
 
 	//STONE ASTEROIDS
-	Texture* astBigText = new Texture("data/graphics/SAster96.bmp", 5, 5);
-	Texture* astMediumText = new Texture("data/graphics/SAster64.bmp", 3, 8);
-	Texture* astSmallText = new Texture("data/graphics/SAster32.bmp", 2, 8);
+	Texture* astBigText = new Texture("data/graphics/StoneAsterBig.bmp", 5, 5);
+	Texture* astMediumText = new Texture("data/graphics/StoneAsterMedium.bmp", 3, 8);
+	Texture* astSmallText = new Texture("data/graphics/StoneAsterSmall.bmp", 2, 8);
 	RenderObject* astRendObj = new RenderObject(2, 6, astBigText, &myEngine, 1.0f, 1, 1);
 	Vector2 posAstCol;
 	posAstCol.x = 400.0f;
@@ -216,9 +216,9 @@ int main() {
 	firstLevel->AddObjectToBuffer(astObj);
 
 	//METAL ASTEROIDS
-	Texture* metalBigText = new Texture("data/graphics/MAster96.bmp", 5, 5);
-	Texture* metalMediumText = new Texture("data/graphics/MAster64.bmp", 3, 8);
-	Texture* metalSmallText = new Texture("data/graphics/MAster32.bmp", 2, 8);
+	Texture* metalBigText = new Texture("data/graphics/MetalAsterBig.bmp", 5, 5);
+	Texture* metalMediumText = new Texture("data/graphics/MetalAsterMedium.bmp", 3, 8);
+	Texture* metalSmallText = new Texture("data/graphics/MetalAsterSmall.bmp", 2, 8);
 	RenderObject* metalRendObj = new RenderObject(2, 6, metalBigText, &myEngine, 1.0f, 1, 1);
 	Vector2 posMetalCol;
 	posMetalCol.x = 600.0f;
@@ -259,7 +259,7 @@ int main() {
 	Texture* extraLifeText = new Texture("data/graphics/PULife.bmp", 1, 1);
 	RenderObject* shipLivesRendObject = new RenderObject(30, 30, extraLifeText, &myEngine, 1, 2);
 	shipLivesRendObject->SetOffsets(-275.0f, -180.0f);
-	Texture* lifeUnitText = new Texture("data/graphics/lifeunit.jpg", 1, 1);
+	Texture* lifeUnitText = new Texture("data/graphics/LifeUnitUI.jpg", 1, 1);
 	RenderObject* lifeBarRendObject = new RenderObject(30, 30, lifeUnitText, &myEngine, 1, 8);
 	lifeBarRendObject->SetOffsets(-280.0f, -210.0f);
 	lifeBarRendObject->SetColorOverlay(1.0f, 0.0f, 0.0f);

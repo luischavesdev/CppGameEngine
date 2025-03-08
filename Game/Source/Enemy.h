@@ -3,7 +3,7 @@
 
 class Enemy : public Sprite 
 {
-private:
+protected:
 	float damageVal = 10.0f;
 	float life;
 	float maxLife = 3.0f;

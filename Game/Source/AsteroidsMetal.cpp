@@ -8,6 +8,8 @@ AsteroidsMetal::AsteroidsMetal(std::string objectNameRef, RenderObject* RenderOb
 {
 	myVelocity = velRef;
 	mySize = sizeRef;
+	maxLife = 9999.0f;
+	life = 9999.0f;
 }
 
 void AsteroidsMetal::Start()
